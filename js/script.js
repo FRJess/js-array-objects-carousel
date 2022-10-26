@@ -43,6 +43,9 @@ let counterImages = 0;
 let sliderHtml = '';
 let thumbsHtml = '';
 
+next.addEventListener('click',nextFunction);
+prev.addEventListener('click',prevFunction);
+
 //FUNCTIONS
 
 //add all countries to file
@@ -62,7 +65,6 @@ function countryCreation(country){
   const name = country.name;
   const description = country.description;
   const image = country.image;
-
   
     sliderHtml += `
     <div class="item">
@@ -79,27 +81,47 @@ function countryCreation(country){
 slider.innerHTML = sliderHtml;
 thumbs.innerHTML = thumbsHtml;
 
-//clases delcaration for active
 const listImages = document.getElementsByClassName('item');
 const listthumbs = document.getElementsByClassName('item-thumb');
 
 listImages[counterImages].classList.add('active');
 listthumbs[counterImages].classList.add('active');
 
-prev.addEventListener('click',function(){
+function nextFunction(){
   listImages[counterImages].classList.remove('active');
   listthumbs[counterImages].classList.remove('active');
   counterImages++;
   if(counterImages === numImages) counterImages = 0;
   listImages[counterImages].classList.add('active');
   listthumbs[counterImages].classList.add('active');
-})
 
-next.addEventListener('click',function(){
+};
+
+function prevFunction(){
   listImages[counterImages].classList.remove('active');
   listthumbs[counterImages].classList.remove('active');
   counterImages--;
   if(counterImages < 0) counterImages = numImages - 1;
   listImages[counterImages].classList.add('active');
   listthumbs[counterImages].classList.add('active');
-})
+};
+
+//CAROUSEL AUTOPLAY
+
+slider.addEventListener('mouseenter', autoPlayStop);
+slider.addEventListener('mouseleave', autoPlayStart);
+
+//AutoPlay when opening page
+
+let playCarousel;
+playCarousel = setInterval(nextFunction, 2000);
+
+//Stop play when mouse over slider
+function autoPlayStop(){
+  clearInterval(playCarousel);
+};
+
+//Start again when mouse out of slider
+function autoPlayStart(){
+  playCarousel = setInterval(nextFunction, 2000);
+};
