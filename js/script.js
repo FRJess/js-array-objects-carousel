@@ -1,30 +1,35 @@
 //MY OBJECT
 
-const countries = [
+const cities = [
   {
-    name :'Svezia',
-    description: 'Freddo',
-    image: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg'
+    name :'San Francisco',
+    country: 'USA',
+    dimension: '122 km²',
+    image: 'San Francisco.jpg'
   },
   {
-    name :'Perù',
-    description: 'Caldo',
-    image: 'https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg'
+    name :'Lisbon',
+    country: 'Portugal',
+    dimension: '100,05km²',
+    image: 'Lisbon.jpg'
   },
   {
-    name :'Chile',
-    description: 'Caldo',
-    image: 'https://img.itinari.com/pages/images/original/0d3ed180-d22d-48e8-84df-19c4d888b41f-62-crop.jpg?ch=DPR&dpr=2.625&w=1600&s=7ebd4b5a9e045f41b4e0c7c75d298d6c'
+    name :'Rome',
+    country: 'Italy',
+    dimension: '1287,36km²',
+    image: 'Rome.jpg'
   },
   {
-    name :'Argentina',
-    description: 'Caldo',
-    image: 'https://static1.evcdn.net/images/reduction/1583177_w-1920_h-1080_q-70_m-crop.jpg'
+    name :'Chicago',
+    country: 'USA',
+    dimension: '606,34km²',
+    image: 'Chicago.jpg'
   },
   {
-    name :'Columbia',
-    description: 'Caldo',
-    image: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop'
+    name :'Madrid',
+    country: 'Spain',
+    dimension: '604,3km²',
+    image: 'Madrid.jpg'
   },
 
 ];
@@ -55,26 +60,30 @@ function worldCreation(){
   
   slider.innerHTML = '';
 
-  countries.forEach( (country) => countryCreation(country) );
+  cities.forEach( (city) => cityCreation(city) );
 
 }
 
-//add objects values to file
-function countryCreation(country){
+//add objects values to city
+function cityCreation(city){
   
-  const name = country.name;
-  const description = country.description;
-  const image = country.image;
+  const name = city.name;
+  const country = city.country;
+  const dimension = city.dimension;
+  const image = city.image;
   
     sliderHtml += `
     <div class="item">
-      <img class="" src="${image}" alt="">
-      <div class="country-name">${name}</div>
-      <p class="description">${description}</p>
+      <img class="" src="img/${image}" alt="">
+      <div class="city-informations bg-dark bg-opacity-25 p-2 border border-dark border-opacity-10 rounded">
+        <div class="city-name">${name}</div>
+        <div class="country-name">${country}</div>
+        <p class="dimension">${dimension}</p>
+      </div>
     </div>
 `;
     thumbsHtml += `
-    <img  class="item-thumb" src="${image}" alt="">
+    <img  class="item-thumb" src="img/${image}" alt="">
 `;
 }
 
@@ -108,20 +117,20 @@ function prevFunction(){
 
 //CAROUSEL AUTOPLAY
 
-slider.addEventListener('mouseenter', autoPlayStop);
-slider.addEventListener('mouseleave', autoPlayStart);
+// slider.addEventListener('mouseenter', autoPlayStop);
+// slider.addEventListener('mouseleave', autoPlayStart);
 
-//AutoPlay when opening page
+// //AutoPlay when opening page
 
-let playCarousel;
-playCarousel = setInterval(nextFunction, 4000);
+// let playCarousel;
+// playCarousel = setInterval(nextFunction, 4000);
 
-//Stop play when mouse over slider
-function autoPlayStop(){
-  clearInterval(playCarousel);
-};
+// //Stop play when mouse over slider
+// function autoPlayStop(){
+//   clearInterval(playCarousel);
+// };
 
-//Start again when mouse out of slider
-function autoPlayStart(){
-  playCarousel = setInterval(nextFunction, 4000);
-};
+// //Start again when mouse out of slider
+// function autoPlayStart(){
+//   playCarousel = setInterval(nextFunction, 4000);
+// };
