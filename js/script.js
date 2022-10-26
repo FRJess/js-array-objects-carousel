@@ -38,7 +38,7 @@ const thumbs = document.querySelector('.thumbs');
 const next = document.querySelector('.up');
 const prev = document.querySelector('.down');
 
-const numImages = 2;
+const numImages = 5;
 let counterImages = 0;
 let sliderHtml = '';
 let thumbsHtml = '';
@@ -58,14 +58,12 @@ function worldCreation(){
 
 //add objects values to file
 function countryCreation(country){
-  // let sliderHtml = slider.innerHTML;
-  // let thumbsHtml = thumbs.innerHTML;
   
   const name = country.name;
   const description = country.description;
   const image = country.image;
 
-  for(let i = 1; i <= numImages; i++){
+  
     sliderHtml += `
     <div class="item">
       <img class="" src="${image}" alt="">
@@ -76,8 +74,6 @@ function countryCreation(country){
     thumbsHtml += `
     <img  class="item-thumb" src="${image}" alt="">
 `;
-  }
-  
 }
 
 slider.innerHTML = sliderHtml;
