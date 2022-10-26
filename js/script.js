@@ -35,8 +35,8 @@ const countries = [
 //add images to html file
 const slider = document.querySelector('.slider');
 const thumbs = document.querySelector('.thumbs');
-const next = document.querySelector('.up');
-const prev = document.querySelector('.down');
+const next = document.querySelector('.down');
+const prev = document.querySelector('.up');
 
 const numImages = 5;
 let counterImages = 0;
@@ -114,7 +114,7 @@ slider.addEventListener('mouseleave', autoPlayStart);
 //AutoPlay when opening page
 
 let playCarousel;
-playCarousel = setInterval(nextFunction, 2000);
+playCarousel = setInterval(nextFunction, 4000);
 
 //Stop play when mouse over slider
 function autoPlayStop(){
@@ -123,5 +123,5 @@ function autoPlayStop(){
 
 //Start again when mouse out of slider
 function autoPlayStart(){
-  playCarousel = setInterval(nextFunction, 2000);
+  playCarousel = setInterval(nextFunction, 4000);
 };
