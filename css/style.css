@@ -14,7 +14,7 @@ body{
   display: none;
 }
 
-/* STYLE */
+/* MAIN DIMENSIONS */
 
 .main-wrapper{
   height: 100vh;
@@ -32,7 +32,7 @@ body{
   height: 90%;
 }
 
-/* Slider */
+/* SLIDER */
 
 .slider{
   width: 100%;
@@ -74,7 +74,7 @@ body{
   justify-content:center;
 }
 
-/* Thumbs */
+/* THUMBNAIL */
 
 .thumbs{
   position: relative;
@@ -97,7 +97,7 @@ body{
   border: 2px solid white;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .jt-buttons{
   position: absolute;
