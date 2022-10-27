@@ -40,8 +40,8 @@ const cities = [
 //add images to html file
 const slider = document.querySelector('.slider');
 const thumbs = document.querySelector('.thumbs');
-const next = document.querySelector('.down');
-const prev = document.querySelector('.up');
+const next = document.querySelector('.right');
+const prev = document.querySelector('.left');
 
 const numImages = 5;
 let counterImages = 0;
@@ -78,7 +78,7 @@ function cityCreation(city){
       <div class="city-informations bg-dark bg-opacity-25 p-2 border border-dark border-opacity-10 rounded">
         <div class="city-name">${name}</div>
         <div class="country-name">${country}</div>
-        <p class="dimension">${dimension}</p>
+        <p class="dimension m-0">${dimension}</p>
       </div>
     </div>
 `;
