@@ -90,6 +90,7 @@ function cityCreation(city){
 slider.innerHTML = sliderHtml;
 thumbs.innerHTML = thumbsHtml;
 
+//Button action on image
 const listImages = document.getElementsByClassName('item');
 const listthumbs = document.getElementsByClassName('item-thumb');
 
@@ -117,20 +118,19 @@ function prevFunction(){
 
 //CAROUSEL AUTOPLAY
 
-// slider.addEventListener('mouseenter', autoPlayStop);
-// slider.addEventListener('mouseleave', autoPlayStart);
+slider.addEventListener('mouseenter', autoPlayStop);
+slider.addEventListener('mouseleave', autoPlayStart);
 
-// //AutoPlay when opening page
+//AutoPlay when opening page
+let playCarousel;
+playCarousel = setInterval(nextFunction, 4000);
 
-// let playCarousel;
-// playCarousel = setInterval(nextFunction, 4000);
+//Stop play when mouse over slider
+function autoPlayStop(){
+  clearInterval(playCarousel);
+};
 
-// //Stop play when mouse over slider
-// function autoPlayStop(){
-//   clearInterval(playCarousel);
-// };
-
-// //Start again when mouse out of slider
-// function autoPlayStart(){
-//   playCarousel = setInterval(nextFunction, 4000);
-// };
+//Start again when mouse out of slider
+function autoPlayStart(){
+  playCarousel = setInterval(nextFunction, 4000);
+};
